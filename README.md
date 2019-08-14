@@ -7,6 +7,10 @@ First learned Fundamentals of Javascript, and later Events, funcitions, and Loca
 
 # First Project
 
+In this first project i builded a litte app what it allows add new tweet and the front-end, the first concept so you understan better, i create my const selecting the place for print the new Tweet.
+
+Const = listaTweets = document.getElementById('lista-tweets');
+
 ![Local Storage](https://github.com/g4brieljs/curso-javascript/blob/master/4-LolcalStorage(Twitter)/Twitter/tweet.png)
 
 # Second Project

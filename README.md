@@ -21,7 +21,21 @@ Const = listaTweets = document.getElementById('lista-tweets');
 
 ![Local Storage](https://github.com/g4brieljs/curso-javascript/blob/master/6-SegundoProyecto(Email)/email/Email.png)
 
-# Foruth project
+# Projects With EcmaScritp 6
+
+# Fourth project | Class in Javscript and constructor
+
+class Client(){
+  constructor(name, salary){
+    this.name = name;
+    this.saldo = salary;
+  }
+  
+  //Here we can print prototypes
+  printSalary(){
+    return `Hello ${this.name}, you salary is $${this.salary} `
+  }
+}
 
 ![carsecure](https://github.com/g4brieljs/Course-Javascript/blob/master/9-cotizaSeguro/cotizador-coches.png)
 

@@ -75,3 +75,12 @@ header h1 {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+.correcto{
+    background-color: rgb(216, 255, 214);
+    border: 1px solid rgb(0, 119, 36);
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(25, 202, 18);
+}

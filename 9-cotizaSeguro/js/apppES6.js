@@ -10,14 +10,18 @@
 
 // siempre que colecciones el boton vamos a recolecat los datos del form
 // Constructor para Seguro, este leera los datos del form
-function Seguro(marca, year, tipo){
-    this.marca = marca;
-    this.year = year;
-    this.tipo = tipo;
-// ya hemos creado nuestro primer constructor
-}
 
-Seguro.prototype.cotizarSeguro = function(){
+/* #### Cambiando el codigo a ECMASCRIPT6 CLases*/
+class Seguro{
+    constructor(marca, year, tipo){
+        this.marca = marca;
+        this.year = year;
+        this.tipo = tipo;
+    }
+// ya hemos creado nuestro primer constructor
+
+// Cotizar seguro
+cotizarSeguro(){
     /*
         1 = americano 1.15
         2 = asiatico 1.05
@@ -60,70 +64,70 @@ Seguro.prototype.cotizarSeguro = function(){
     // console.log(cantidad);
 
 }
+}
+
 
 // El otro constructor mostrara la interfaz de usuario, mostrar los resultados
-function Interfaz(){
-    //inicializa vacio, pero se cargara del prototype
-}
+class Interfaz{
 
-//Mensaje que se imprime en el HTML || Podemos reutilizar mensaje
-Interfaz.prototype.mostrarMensaje = function(mensaje, tipo){
-    const div = document.createElement('div');
-
-    // ahora vamos a crear una clase dependiendo tl tipo de error
-    if(tipo === 'error'){
-        div.classList.add('mensaje','error');
-    }else{
-        div.classList.add('mensaje','correcto');
-    }
-
-    //insertando html sin importar que tipo de error sea
-    div.innerHTML = `${mensaje}`;
-    // insertando el form || insertBefore, toma dos parametros, el primero que quieres insertar, y el 2do es antes de lo que quieres insertar
-    formulario.insertBefore(div, document.querySelector('.form-group'));
-    // desaraprece el mensaje al pasar 3s
-    setTimeout(function(){
-        document.querySelector('.mensaje').remove();
-    }, 3000);
-}
-
-// Este prototype imprimirá el resultado de la aplicacion
-Interfaz.prototype.mostrarResultado = function(seguro, total){
-    const resultado = document.getElementById('resultado');
-
-    let marca;
-    switch(seguro.marca){
-        case '1':
-            marca = 'Americano';
-            break;
-        case '2':
-            marca = 'Asiatico';
-            break;
-        case '3':
-            marca = 'Europeo';
-            break;
-    }
-
-    // Creando nuestro div
-    const div = document.createElement('div');
-    // Mostrando informacion
-    div.innerHTML = `
-        <p class="header">Tu resumen:</p>
-        <p>Marca: ${marca}</p>
-        <p>Año: ${seguro.year}</p>
-        <p>Tipo: ${seguro.tipo}</p>
-        <p>Total a pagar: $${total}</p>
-    `;
-
-    const spinner = document.querySelector('#cargando img');
-    spinner.style.display = 'block';
-    setTimeout(function(){
-        spinner.style.display = 'none';
-        resultado.appendChild(div);
-    }, 3000);
-
+    mostrarMensaje(mensaje, tipo){
+        const div = document.createElement('div');
     
-    console.log(marca);
+        // ahora vamos a crear una clase dependiendo tl tipo de error
+        if(tipo === 'error'){
+            div.classList.add('mensaje','error');
+        }else{
+            div.classList.add('mensaje','correcto');
+        }
+    
+        //insertando html sin importar que tipo de error sea
+        div.innerHTML = `${mensaje}`;
+        // insertando el form || insertBefore, toma dos parametros, el primero que quieres insertar, y el 2do es antes de lo que quieres insertar
+        formulario.insertBefore(div, document.querySelector('.form-group'));
+        // desaraprece el mensaje al pasar 3s
+        setTimeout(function(){
+            document.querySelector('.mensaje').remove();
+        }, 3000);
+    }
+
+    mostrarResultado(seguro, total){
+        const resultado = document.getElementById('resultado');
+    
+        let marca;
+        switch(seguro.marca){
+            case '1':
+                marca = 'Americano';
+                break;
+            case '2':
+                marca = 'Asiatico';
+                break;
+            case '3':
+                marca = 'Europeo';
+                break;
+        }
+    
+        // Creando nuestro div
+        const div = document.createElement('div');
+        // Mostrando informacion
+        div.innerHTML = `
+            <p class="header">Tu resumen:</p>
+            <p>Marca: ${marca}</p>
+            <p>Año: ${seguro.year}</p>
+            <p>Tipo: ${seguro.tipo}</p>
+            <p>Total a pagar: $${total}</p>
+        `;
+    
+        const spinner = document.querySelector('#cargando img');
+        spinner.style.display = 'block';
+        setTimeout(function(){
+            spinner.style.display = 'none';
+            resultado.appendChild(div);
+        }, 3000);
+    
+        
+        console.log(marca);
+    }
+    
 }
 
 // En las clases son la van los datos

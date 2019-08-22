@@ -9,7 +9,9 @@ First learned Fundamentals of Javascript, and later Events, funcitions, and Loca
 
 In this first project i builded a litte app what it allows add new tweet and the front-end, the first concept so you understan better, i create my const selecting the place for print the new Tweet.
 
-Const = listaTweets = document.getElementById('lista-tweets');
+You can add the Local Storage 
+  `localStorage.setItem('tweets', JSON.stringify(tweets)); `
+
 
 ![Local Storage](https://github.com/g4brieljs/curso-javascript/blob/master/4-LolcalStorage(Twitter)/Twitter/tweet.png)
 
@@ -23,8 +25,9 @@ Const = listaTweets = document.getElementById('lista-tweets');
 
 # Projects With EcmaScritp 6
 
-# Fourth project | Class in Javscript and constructor
+# Clas in Javascript 
 
+```
 class Client(){
   constructor(name, salary){
     this.name = name;
@@ -36,8 +39,14 @@ class Client(){
     return `Hello ${this.name}, you salary is $${this.salary} `
   }
 }
+```
+# Fourth project | Class in Javscript and constructor
 
 ![carsecure](https://github.com/g4brieljs/Course-Javascript/blob/master/9-cotizaSeguro/cotizador-coches.png)
+
+# Fiveth project | Class in Javscript and constructor
+
+![gastos](https://github.com/g4brieljs/Course-Javascript/blob/master/10-GastoSemanal-Class/gasto-semanal.png)
 
 # Now i'am building my personal 
 

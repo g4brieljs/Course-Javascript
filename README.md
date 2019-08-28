@@ -3,6 +3,23 @@
 
 First learned Fundamentals of Javascript, and later Events, funcitions, and Local Storage.
 
+## Table of Contents
+-[Local Storage and Event Delegation](#projects-with-local-Storage-and-event-delegation)
+-[Class in Javascript](#class-in-javascript)
+-[AJAX in Javascript](#ajax-in-javsacript)
+-[API in Javascript](#apis-in-javascript)
+-[Rest API](#rest-apis-in-javascript)
+-[Rest API Endpoints and Request](#rest-api-endpoints-and-request)
+-[Rest API Example](#rest-api-example)
+-[Syncrhonous code in Javascript](#syncrhonous-code-in-javascript)
+-[Callbacks in Javascript](#callbacks)
+-[Promises in Javascript](#promises)
+-[Async Awaiy in Javascript](#async-await)
+-[Fetch API vs AJAX](#fetch-api-vs-ajax--converting-ajax-project--with-fetch-api)
+-[Project with Fetch API - Async Await - Class - Arrow Functions](#seventh-project--using-fetchapi--async-await--class--arrow-function)
+
+
+
 # Projects with Local Storage and Event Delegation
 
 # First Project
@@ -28,7 +45,7 @@ In this first project i builded a litte app what it allows add new tweet and the
 
 # Class in Javascript 
 
-```
+```javascript
 class Client(){
   constructor(name, salary){
     this.name = name;
@@ -51,7 +68,7 @@ class Client(){
 
 # AJAX in Javascript 
 
-```
+```javascript
 const boton1 = document.getElementById('boton1');
 
 boton1.addEventListener('click', function(){
@@ -116,7 +133,7 @@ A **REST API** has Endpoints (or Urls) to perform CRUD operations.
 
 Building The URL, to which we pass the data provided by the user, and with this Rest API you can print with AJAX
 
-```
+```javascript
 // building the url
     let url = '';
     // ? se usa cuando quieres enviar mas parametros en la url
@@ -140,6 +157,116 @@ Building The URL, to which we pass the data provided by the user, and with this 
 ```
 
 # Sixth project | REST-API's and AJAX and Javascript
+
+![generadorNames](https://github.com/g4brieljs/Course-Javascript/blob/master/14-Project-WithRESTAPI/generador-Names.png)
+
+# Syncrhonous Code in Javascript 
+
+ The **Syncrhonous** code is executed **from the first line to the last**.  
+
+The **Asyncrhonous** code **can be executed any part of the code without for another part of it**.
+This code is more used when you use API or REST API, if you charge 1000 clients in you website, you no want stop you website.
+
+**Example**
+
+XMLHhttRequest and FETCH API
+
+**In Javsacript you will have at your disposal these functions to create asyncrhonous code:**
+
+-Callbacks
+-Promises
+-Async/Await
+
+# Callbacks 
+
+```javascript
+// Add new client later two second
+function newClient(clients, callback){
+    setTimeout(function(){
+        client.push(clients);
+        callback();
+    }, 2000);
+}
+
+// The clients show later one second
+function showClient(){
+    // simulando un servidor
+    setTimeout(function(){
+
+        let html = '';
+
+        client.forEach(function(clients){
+            html += `<li>${clients}</li>`;
+        });
+        document.getElementById('app').innerHTML = html;
+
+    }, 1000);
+}
+```
+
+# Promises 
+
+```javascript
+const applyOffer = new Promise(function(resolve, reject){
+    // Simulando a Error
+    const offer = false;
+    if(offer){
+        resolve('Apply Offer for you');
+    }else{
+        reject('You no have Offer');
+    }
+});
+
+// you ever use then with cath
+applyOffer.then(function(result){
+    console.log(result);
+}).catch(function(error){
+    console.log(error);
+});
+```
+
+# Async Await
+
+```javascript
+async function readTodos(){
+    // Wait the answer
+    const answer = await fetch('https://jsonplaceholder.typicode.com/todos');
+
+    const date = await answer.json();
+
+    return date;
+
+}
+
+readTodos()
+    .then( users => console.log(users));
+```
+
+# Fetch API vs AJAX | Converting AJAX project, with FETCH API
+
+```javascript
+ fetch(url)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            let html = '<h2>Nombres generados</h2>';
+            html += `<ul class="lista">`;
+
+            data.forEach(names => {
+                html += `
+                    <li>${names.name}</li>
+                `;
+            });
+
+            html += `</ul>`;
+
+            document.querySelector('#resultado').innerHTML = html;
+        })
+```
+
+# Seventh project | Using FetchAPI - Async Await - Class - Arrow Function 
+
 
 ![generadorNames](https://github.com/g4brieljs/Course-Javascript/blob/master/14-Project-WithRESTAPI/generador-Names.png)
 

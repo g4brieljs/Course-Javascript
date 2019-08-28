@@ -4,19 +4,19 @@
 First learned Fundamentals of Javascript, and later Events, funcitions, and Local Storage.
 
 ## Table of Contents
--[Local Storage and Event Delegation](#projects-with-local-Storage-and-event-delegation)
--[Class in Javascript](#class-in-javascript)
--[AJAX in Javascript](#ajax-in-javsacript)
--[API in Javascript](#apis-in-javascript)
--[Rest API](#rest-apis-in-javascript)
--[Rest API Endpoints and Request](#rest-api-endpoints-and-request)
--[Rest API Example](#rest-api-example)
--[Syncrhonous code in Javascript](#syncrhonous-code-in-javascript)
--[Callbacks in Javascript](#callbacks)
--[Promises in Javascript](#promises)
--[Async Awaiy in Javascript](#async-await)
--[Fetch API vs AJAX](#fetch-api-vs-ajax--converting-ajax-project--with-fetch-api)
--[Project with Fetch API - Async Await - Class - Arrow Functions](#seventh-project--using-fetchapi--async-await--class--arrow-function)
+- [Local Storage and Event Delegation](#projects-with-local-Storage-and-event-delegation)
+- [Class in Javascript](#class-in-javascript)
+-  [AJAX in Javascript](#ajax-in-javascript)
+- [API in Javascript](#apis-in-javascript)
+- [Rest API](#rest-apis-in-javascript)
+- [Rest API Endpoints and Request](#rest-api-endpoints-and-request)
+- [Rest API Example](#rest-api-example)
+- [Syncrhonous code in Javascript](#syncrhonous-and-asyncrhonous-code-in-javascript)
+- [Callbacks in Javascript](#callbacks)
+- [Promises in Javascript](#promises)
+- [Async Awaiy in Javascript](#async-await)
+- [Fetch API vs AJAX](#fetch-api-vs-ajax--converting-ajax-project-with-fetch-api)
+- [Project with Fetch API - Async Await - Class - Arrow Functions](#seventh-project--using-fetchapi---async-await---class---arrow-function)
 
 
 
@@ -160,7 +160,7 @@ Building The URL, to which we pass the data provided by the user, and with this 
 
 ![generadorNames](https://github.com/g4brieljs/Course-Javascript/blob/master/14-Project-WithRESTAPI/generador-Names.png)
 
-# Syncrhonous Code in Javascript 
+# Syncrhonous and Asyncrhonous Code in Javascript 
 
  The **Syncrhonous** code is executed **from the first line to the last**.  
 

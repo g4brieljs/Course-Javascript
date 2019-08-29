@@ -177,6 +177,13 @@ XMLHhttRequest and FETCH API
 -Promises
 -Async/Await
 
+**For to learn more**
+
+- **Callbacks/Spanish**(https://developer.mozilla.org/es/docs/Glossary/Callback_function)
+- **Promises/Spanish**(https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise)
+- **Async-Await/Spanish**(https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/funcion_asincrona)
+- **Callbacks-vs-promises-vs-asyncAwait/English**(https://medium.com/@ThatGuyTinus/callbacks-vs-promises-vs-async-await-f65ed7c2b9b4)
+
 # Callbacks 
 
 ```javascript
@@ -268,8 +275,8 @@ readTodos()
 # Seventh project | Using FetchAPI - Async Await - Class - Arrow Function 
 
 
-![generadorNames](https://github.com/g4brieljs/Course-Javascript/blob/master/14-Project-WithRESTAPI/generador-Names.png)
+![currencyQuotes](https://github.com/g4brieljs/Course-Javascript/blob/master/21-cryptocurrency-quote/crypto.png)
 
-# Now i'am building my personal project 
+# Now i'am building my personal project | E-commerce with Stack MERN, and other Language for backend the which is Python and Djando
 
 Coming soon!

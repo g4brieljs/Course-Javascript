@@ -51,12 +51,22 @@ class Interface{
     // print result of Qoutes
 
     showResults(resultado, moneda, crypto, textCurrency){
+
+        // select first div
+        const resultadoAnterior = document.querySelector('#resultado > div');
+
+        if(resultadoAnterior){
+            resultadoAnterior.remove();
+        }
+
         // asi puedes ir accediendo a un objeto en javascript
         const dateCurrency = resultado[crypto][moneda];
         console.log(resultado);
         // Only show 2 decimals
         let price = dateCurrency.PRICE.toFixed(2),
-            changeDay = dateCurrency.CHANGEPCTDAY.toFixed(2);
+            changeDay = dateCurrency.CHANGEPCTDAY.toFixed(2),
+            // Change date 
+            update = new Date(dateCurrency.LASTUPDATE * 1000).toLocaleDateString('es-MX');
         // build template
 
         let templateHTML = `
@@ -69,13 +79,30 @@ class Interface{
                     </p>
                     <p>Change of last day: % ${changeDay}
                     </p>
+                    <p>The last update: ${update}
+                    </p>
                 </div>
             </div>
         
         `;
 
-        // print result
+        // print spinner
 
-        document.querySelector('#resultado').innerHTML = templateHTML;
+        this.showHideSpinner('block');
+
+        
+        setTimeout(() => {
+            // print result
+            document.querySelector('#resultado').innerHTML = templateHTML;
+            
+            //hide spinner
+            this.showHideSpinner('none');
+        }, 2000)
+    }
+
+    // show Spinner
+    showHideSpinner(view){
+        const spinner = document.querySelector('.contenido-spinner');
+        spinner.style.display = view;
     }
 }

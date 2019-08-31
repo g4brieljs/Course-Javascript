@@ -276,6 +276,10 @@ readTodos()
 
 ![currencyQuotes](https://github.com/g4brieljs/Course-Javascript/blob/master/21-cryptocurrency-quote/crypto.png)
 
+# Eighth project | Using FetchAPI - Async Await - Class - Arrow Function 
+
+![ApiEvents](https://github.com/g4brieljs/Course-Javascript/blob/master/22-Api-Events/APIevetns.png)
+
 # Now i'am building my personal project | E-commerce with Stack MERN, and other Language for backend the which is Python and Django
 
 Coming soon!

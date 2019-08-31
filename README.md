@@ -16,7 +16,7 @@ First learned Fundamentals of Javascript, and later Events, funcitions, and Loca
 - [Promises in Javascript](#promises)
 - [Async Awaiy in Javascript](#async-await)
 - [Fetch API vs AJAX](#fetch-api-vs-ajax--converting-ajax-project-with-fetch-api)
-- [Project with Fetch API - Async Await - Class - Arrow Functions](#seventh-project--using-fetchapi---async-await---class---arrow-function)
+- [Projects with Fetch API - Async Await - Class - Arrow Functions](#seventh-project--using-fetchapi---async-await---class---arrow-function)
 
 
 
@@ -273,11 +273,11 @@ readTodos()
 ```
 
 # Seventh project | Using FetchAPI - Async Await - Class - Arrow Function 
-
+**Look project**(https://g4brieljs.github.io/cryptocurrency-quote/index.html)
 ![currencyQuotes](https://github.com/g4brieljs/Course-Javascript/blob/master/21-cryptocurrency-quote/crypto.png)
 
 # Eighth project | Using FetchAPI - Async Await - Class - Arrow Function 
-
+**Look project**(https://g4brieljs.github.io/API-Events/)
 ![ApiEvents](https://github.com/g4brieljs/Course-Javascript/blob/master/22-Api-Events/APIevetns.png)
 
 # Now i'am building my personal project | E-commerce with Stack MERN, and other Language for backend the which is Python and Django

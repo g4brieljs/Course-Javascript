@@ -278,7 +278,7 @@ readTodos()
 
 # Eighth project | Using FetchAPI - Async Await - Class - Arrow Function 
 **Look project**(https://g4brieljs.github.io/API-Events/)
-![ApiEvents](https://github.com/g4brieljs/Course-Javascript/blob/master/22-Api-Events/APIevetns.png)
+![ApiEvents](https://github.com/g4brieljs/Course-Javascript/blob/master/22-Api-Events/APIevents.png)
 
 # Now i'am building my personal project | E-commerce with Stack MERN, and other Language for backend the which is Python and Django
 

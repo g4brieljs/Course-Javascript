@@ -280,6 +280,30 @@ readTodos()
 **Look project**(https://g4brieljs.github.io/API-Events/)
 ![ApiEvents](https://github.com/g4brieljs/Course-Javascript/blob/master/22-Api-Events/APIevents.png)
 
+# EcmaScript 6
+
+### Destructuring 
+```js
+
+const client = {
+    type: 'Premium',
+    dates : {
+        name: 'Gabriel',
+        lastname: 'Jimenez',
+        direction: {
+            city: 'Santo Domingo'
+        }
+    },
+    move: ['12', '13', '14']
+}
+
+let{
+    type,
+    dates: {direction},
+    move : [ , , three]
+} = client;
+```
+
 # Now i'am building my personal project | E-commerce with Stack MERN, and other Language for backend the which is Python and Django
 
 Coming soon!

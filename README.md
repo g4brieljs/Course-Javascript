@@ -304,6 +304,106 @@ let{
 } = client;
 ```
 
-# Now i'am building my personal project | E-commerce with Stack MERN, and other Language for backend the which is Python and Django
+### Symbols
+Javascript tiene 5 propiedades pritivas, y symbols es uno de estas
 
-Coming soon!
+```js
+const simbolo = Symbol();
+
+let person = {};
+
+person[name] = 'G4brieljs';
+
+console.log(person[name]);
+```
+
+### Sets
+**What is set** permite creare una lista de valores, sin duplicaciones.
+```js
+let car = new Set(1,2,3,1,2,3);
+console.log(car);
+output: 1,2,3.
+```
+//Saber si hay algun elemento
+```js
+console.log(car.has(2));
+```
+// Eliminar algun elmento
+```js
+car.delete(3);
+```
+// Borrar totalmente
+```js
+car.clear();
+```
+
+// Iterandolos
+```js
+car.forEach((producto) =>{
+    consolelog(producto);
+})
+```
+**Importante** Las llaves y el valor de los sets son iguales.
+
+**Convertir un set en un array normal**
+
+const arrayCar = [...car];
+
+### Maps
+```js
+let client = new Map();
+client.set('nombre', 'Gabriel');
+
+console.log(client.get('nombre');
+```
+
+### Iteradores
+
+```js
+
+function crearIterador(carrito){
+    //incializamos el indice
+    let i = 0;
+
+    return{
+        siguiente: () => {
+            let fin = (i >= carrito.length);
+
+            let valor = !fin ? carrito[i++] : undefined;
+
+            return{
+                fin: fin,
+                valor: valor
+            }
+        }
+    }
+}
+
+
+const carrito = ['Producto 1', 'Producto 2', 'Producto 3', 'Producto 4'];
+
+const recorreCarrito = crearIterador(carrito);
+
+console.log(recorreCarrito.siguiente());
+```
+
+### Generadores Javascript
+
+```js
+// Los generadores son funciones que retornan iteradores, se indican con * despues de la palabra funtion
+
+function *crearGenerador(){
+    // usas la palabra yield
+    yield 1;
+    yield 'Nombre';
+    yield 3 + 3;
+}
+
+const iterador = crearGenerador();
+
+console.log(iterador.next().value);
+```
+
+# Regular expressions
+
+![regular](https://github.com/g4brieljs/Course-Javascript/blob/master/23-EcmaScript6/regular.png)

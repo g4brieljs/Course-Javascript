@@ -77,7 +77,7 @@ function reservacion(completo,
         if(completo){
             console.log('proceder a completar');
         }else{
-            console.log()
+            console.log('NO proceder')
         }
     console.log(metodo);
     console.log(dia);
@@ -85,7 +85,7 @@ function reservacion(completo,
 }
 
 reservacion(
-    ,
+    true,
     {
         metodo: 'tarjeta',
         dia: 5

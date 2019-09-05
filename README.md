@@ -406,4 +406,21 @@ console.log(iterador.next().value);
 
 # Regular expressions
 
+Las expresiones regulares te permiten validar datos de manera más precisa, y buscar valores de manera más rápida.
+
+```js
+expReg = /\d\d-\d\d-\d\d\d\d/;
+valor = '20-10-2000';
+
+console.log(expReg.test(valor));
+```
+
+**More** (https://github.com/g4brieljs/Course-Javascript/blob/master/23-EcmaScript6/regularExpression.js)
+
 ![regular](https://github.com/g4brieljs/Course-Javascript/blob/master/23-EcmaScript6/regular.png)
+
+# Nineth project | Using FetchAPI - Async Await - Class - Arrow Function 
+
+**Look project**(https://g4brieljs.github.io/API-Events/)
+
+![ApiEvents](https://github.com/g4brieljs/Course-Javascript/blob/master/24-API-Maps/apimaps.png)

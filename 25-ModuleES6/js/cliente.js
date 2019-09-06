@@ -1,0 +1,2 @@
+export const nameClient = 'Juan';
+

@@ -419,8 +419,85 @@ console.log(expReg.test(valor));
 
 ![regular](https://github.com/g4brieljs/Course-Javascript/blob/master/23-EcmaScript6/regular.png)
 
-# Nineth project | Using FetchAPI - Async Await - Class - Arrow Function 
+# Nineth project | Using - LeafLet FetchAPI - Async Await - Class - Arrow Function 
 
 **Look project**(https://g4brieljs.github.io/API-Events/)
 
 ![ApiEvents](https://github.com/g4brieljs/Course-Javascript/blob/master/24-API-Maps/apimaps.png)
+
+# Modules in Javascript
+
+### What is module?
+
+A **Module** in programming will allow us to group related functionality in the same file in this way, as our project grows, it will be easier to maintain and better organized.
+
+The main advantage of a module is that we can use it where required, leaving the rest of the program hidden for the rest of the code and also reuse the code.
+
+### Benefits
+
+- Dividir el código en pequeños archivos con funcionalidad relacionada.
+- Un módulo puede ser utilizado fácilmente en otra aplicación.
+- Dependencias
+- Evitan conflicto con el nombre de las variables.
+
+### What is a dependecies?
+
+Un módulo puede y deb estar conectado con otro módulo, esa relación se conoce como dependencia.
+
+Si un módulo requiere una pieza de otro módulo, se dique que "depende de se módulo"
+
+### Evitan el scope
+
+La idea de crear módulos también nos ayuda a evitar que si tenemos 2 módulos con la función cliente, esto no tengan un conflicto.
+
+`module1.cliente();`
+`module2.cliente();`
+
+### Desventajas de utilizar muchos archivos JS 
+
+- Cada script es un llamdao HTTP, lo cual hace el sitio web más lento.
+- Cada script detiene la ejecución mientras se descarga.
+- El manejo de las dependencias es manual: si tienes una función en el archivo B y se utiliza en el archivo A sin haberse cargado, tendrás un problema.
+
+## Module in Javascript
+
+### Import var
+
+```js
+export const nameVar = 'G4brieljs';
+```
+
+```js
+import { nameVar } from './file.js';
+```
+
+### Import function
+
+```js
+export function nameFunction(name){
+    return `Client: ${name}`;
+}
+```
+
+```js
+import { nameFunction } from './file.js';
+```
+
+### Import Class
+
+```js
+export class Client {
+    constructor(name){
+        this.name = name;
+    }
+}
+```
+```js
+import { Client } from './file.js';
+```
+
+# Tenth project | Using - Module - FetchAPI - Async Await - Class - Arrow Function 
+
+**Look project**(https://g4brieljs.github.io/API-Events/)
+
+![module](https://github.com/g4brieljs/Course-Javascript/blob/master/26-Project-ModuleES6/module.png)

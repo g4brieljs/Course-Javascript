@@ -421,8 +421,6 @@ console.log(expReg.test(valor));
 
 # Nineth project | Using - LeafLet FetchAPI - Async Await - Class - Arrow Function 
 
-**Look project**(https://g4brieljs.github.io/API-Events/)
-
 ![ApiEvents](https://github.com/g4brieljs/Course-Javascript/blob/master/24-API-Maps/apimaps.png)
 
 # Modules in Javascript
@@ -461,6 +459,10 @@ La idea de crear módulos también nos ayuda a evitar que si tenemos 2 módulos 
 
 ## Module in Javascript
 
+```js
+<script src="app.js" type="module"></script>
+```
+
 ### Import var
 
 ```js
@@ -498,6 +500,20 @@ import { Client } from './file.js';
 
 # Tenth project | Using - Module - FetchAPI - Async Await - Class - Arrow Function 
 
-**Look project**(https://g4brieljs.github.io/API-Events/)
-
 ![module](https://github.com/g4brieljs/Course-Javascript/blob/master/26-Project-ModuleES6/module.png)
+
+# Design Patterns in Javsacript
+
+The are reusable code solutions that used in common problems in sofware applications.
+
+Esto permite que en una empresa todo el equipo lleve un mismo linamiento a la hora de escribir su código.
+
+## Categorys for Design Parents
+- Creacion de objetos
+Mediante un patrón de diseño de este tipo se pueden crear objetos que sigan el mismo linamiento.
+- De estructura
+Definen como se componen y relacionan los objetos entre sí. La idea es que cuando haya cambios, impacten lo menos posible el sistema.
+- De comportamiento
+Definen la interdependencia y comunicación entre objetos, en algunas ocasiones si un objeto cambia, como afecta a otros objetos que dependen de el.
+- De arquitectura 
+Definen funcionalidad especifica sobre la arquitectura de una aplicación como carpetas, nombres que hace cada archivo y como se relacionan.         

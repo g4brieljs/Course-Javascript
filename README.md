@@ -17,6 +17,10 @@ First learned Fundamentals of Javascript, and later Events, funcitions, and Loca
 - [Async Awaiy in Javascript](#async-await)
 - [Fetch API vs AJAX](#fetch-api-vs-ajax--converting-ajax-project-with-fetch-api)
 - [Projects with Fetch API - Async Await - Class - Arrow Functions](#seventh-project--using-fetchapi---async-await---class---arrow-function)
+- [Ecmascript-6](#ecmascript-6)
+- [Regular Expressions](#regular-expressions)
+- [Module in Javascript](#modules-in-javascript)
+- [Design Patterns](#design-patterns-in-javsacript)
 
 
 
@@ -509,11 +513,114 @@ The are reusable code solutions that used in common problems in sofware applicat
 Esto permite que en una empresa todo el equipo lleve un mismo linamiento a la hora de escribir su código.
 
 ## Categorys for Design Parents
-- Creacion de objetos
+- **Creacion de objetos**
 Mediante un patrón de diseño de este tipo se pueden crear objetos que sigan el mismo linamiento.
-- De estructura
+- **De estructura**
 Definen como se componen y relacionan los objetos entre sí. La idea es que cuando haya cambios, impacten lo menos posible el sistema.
-- De comportamiento
+- **De comportamiento**
 Definen la interdependencia y comunicación entre objetos, en algunas ocasiones si un objeto cambia, como afecta a otros objetos que dependen de el.
-- De arquitectura 
+- **De arquitectura** 
 Definen funcionalidad especifica sobre la arquitectura de una aplicación como carpetas, nombres que hace cada archivo y como se relacionan.         
+
+**Arquitectura** mayormente abarca los tres primeros, Creación de objetos, de estructura y de comportamiento.
+
+### Creación de objetos
+- Factory
+- Abstract Factory
+- Builder 
+- Prototype
+- Singleton
+
+### De Estructura
+- Adapter
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Flyweight
+- Proxy
+
+### De comportamiento
+- Template Method 
+- Observer
+- Mediator
+- State
+- Visitor
+
+### De arquitectura
+- MVC (Model view Controller)
+- MVP (Model View presenter)
+- MVVM (Model View ViewModel)
+- Frameworks como Maria, SpineJS, Ember, BackBone o Angular.
+
+## Module Pattern
+
+Es una forma de crear variables publicas y privadas.
+
+Similar a lenguajes a Java como Protected y Public.
+
+Podemos simularlo de esta manera:
+**Creamos un ifi**
+```js
+const buyTicket = (function(){
+
+    // Protected
+    let event = 'Ticket private for party';
+    let price = 100;
+    const addTicket = () => {
+        const element = document.createElement('p');
+        element.textContent = `Buying ticket for: ${event}`;
+        document.querySelector('#app').appendChild(element);
+    }
+
+    // public
+    return {
+        showTicket: function(){
+            addTicket();
+        }
+    }
+
+})();
+
+buyTicket.addTicket();
+console.log(price);
+```
+
+## Factory
+
+Permite crear objetos que son de tipos similares, pero que aun no sabes cuales van a hacer o utilizar, cuando se ejecute le programa decidrirá cuales instanciar.
+
+Ejemplo: Constructor de sitios webs
+
+```js
+function ConstructorSitios(){
+    this.crearElemento = function(texto, tipo){
+        let html;
+
+        if(tipo === 'input'){
+            html = InputHTML(texto);
+        }else if(tipo === 'img'){
+            html = ImagenHTML(texto);
+        }else if(tipo === 'h1'){
+            html = new HeadingHTML(texto);
+        }else if(tipo === 'p'){
+            html = new ParrafoHTML(texto);
+        }
+
+        return html;
+    }
+}
+
+const HeadingHTML = function(texto){
+    this.texto = texto;
+}
+
+const sitioweb = new ConstructorSitios();
+
+//almacenar elementos
+const elemntosWeb = [];
+elmentosWeb.push(sitioweb.crearElemento('Bienvenido', 'h1'));
+
+console.log(sitioweb);
+
+```

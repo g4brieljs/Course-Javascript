@@ -624,3 +624,80 @@ elmentosWeb.push(sitioweb.crearElemento('Bienvenido', 'h1'));
 console.log(sitioweb);
 
 ```
+
+## Singleton (Única Instancia)
+
+**Definición de**[](https://medium.com/@jesusmurfontanals/singleton-pattern-con-javascript-3eb1c03f184e)
+
+Este patrón pertenece a la categoría de los patrones creacionales. La principal misión de este patrón es la de crear una sola instancia de una clase y que este disponible para el resto de la aplicación.
+
+**IMPORTANTE SEGURIDAD**
+
+**BLOG**[](https://medium.com/@jesusmurfontanals/singleton-pattern-con-javascript-3eb1c03f184e)
+
+Una de las razones por las que un Singleton es una mala práctica, es porque generalmente se expone la instancia de nuestro objeto al contexto global de la aplicación, por lo que pudiera ser modificada en cualquier momento perdiendo el control de la misma.
+
+**BLOG**[](http://www.etnassoft.com/2011/05/20/el-patron-singleton-en-javascript/)
+
+Prevenir que el patrón pueda ser reemplazado: un atacante puede tratar de cambiar el singleton de una aplicación por otro implementado por él mismo. Mediante los nuevos atributos ECMAScript 5 de solo lectura (read-only) y de no-configuración (non-configurable), se puede conseguir fácilmente:
+```js
+  Object.defineProperty( namespace, "singleton",
+    { writable: false, configurable: false, value: { ... } } );
+```
+
+
+Ejemplo:
+
+```js
+ const alumnos = {
+    // todos los alumnos
+    listaAlumnos : [],
+
+    // obtener un alumno
+    // Aqui podremos llamra los alumnos por su id, si nada mas queremos el alumno 3 lo llamamos por su id
+    get: function(id){
+        // console.log(id);
+        return this.listaAlumnos[id];
+    },
+
+    // crear alumno
+    // Una vez crear tiene los datos de los alumnos los manda a listaAlumnos, con el metedoo push
+    crear: function(datos){ 
+        this.listaAlumnos.push(datos);
+
+        return datos;
+
+    },
+
+    // lista todos 
+    // aqui se van enlistando los datos
+    listado: function(){
+        return this.listaAlumnos;
+    }
+}
+
+const infoAlumno = {
+    nombre: 'Gabriel',
+    Eddad: 19
+}
+
+const infoAlumno2 = {
+    nombre: 'Yetto',
+    edad: 19
+}
+
+// Aqui creamos los alumnos, mandamos los datos al constructor crear
+alumnos.crear(infoAlumno);
+alumnos.crear(infoAlumno2);
+
+// el listado de todos los alumnos
+const listado = alumnos.listado();
+
+console.log(listado);
+
+
+// te regresa el alumno
+const alumno = alumnos.get(1);
+
+console.log(alumno);
+```

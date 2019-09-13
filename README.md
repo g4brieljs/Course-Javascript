@@ -1,6 +1,8 @@
 # Course of Javascript Complete from zero the to build app with React and Nodejs
 **Summary Of course:**
 
+I am a cybersecurity student and I love programming, so I started to learn Javascript, to be able to develop projects and web applications, and I decided to create this summary to rethink the concepts, if you really want to learn and understand the most demanding language in the world, go to link of the repository and acquire this magnificent course. Let's go!
+
 First learned Fundamentals of Javascript, and later Events, funcitions, and Local Storage.
 
 ## Table of Contents
@@ -21,7 +23,14 @@ First learned Fundamentals of Javascript, and later Events, funcitions, and Loca
 - [Regular Expressions](#regular-expressions)
 - [Module in Javascript](#modules-in-javascript)
 - [Design Patterns](#design-patterns-in-javsacript)
-
+-- [Module](#module-pattern)
+-- [Factory](#factory)
+-- [Singleton](#singleton-única-instancia)
+-- [Builder](#builder)
+-- [Observer](#observer)
+-- [Mediator](#mediator)
+-- [Namespace](#namespace)
+- [Higher Order Functions and Array Methods in Javasccript](#higher-order-functions-and-array-methods-in-javasccript)
 
 
 # Projects with Local Storage and Event Delegation
@@ -941,3 +950,161 @@ facebook.nuevoAnuncio();
 // De esta manera puedes tener muchos publicadores, y suscriptores, que estaran recibiendo notificaciones
 ```
 
+## Mediator 
+
+Es un intermediario que se comunica con distintos tipos de objetos, es una variante del observer, mientras que en el observer, se define un objeto global, el mediator define objetos ya localizados para un objetivo esepcifico
+
+Ejemplo: Sistema de subasta / Otro buen ejemplo seria un chat, que manegaria distintos tipos de objetos, que serian los usuarios
+
+Basicamente esto es un mediador, La subasta vendria siendo el mediador, que interactua con los objetos.
+
+```js
+// object constructor y prototype
+
+const Vendedor = function(nombre){
+    this.nombre = nombre;
+    // aun no sabemos en que sala estan
+    this.sala = null;
+}
+const Comprador = function(nombre){
+    this.nombre = nombre;
+}
+
+// Simular un pequeño sistema de subastas
+
+Vendedor.prototype = {
+    // vamos a usar 2 funciones que estaran atadas a este tipoe de objeto
+    // poder publicar oferta
+    oferta: function(articulo, precio){
+        console.log(`Tenemos el siguiente articulo ${articulo} , iniciamos en $${precio}`);
+    },
+    vendido: function(comprador){
+        console.log(`Vendido a ${comprador} ("sonido de mazo")`)
+    }
+}
+
+// SEgundo prototype
+
+Comprador.prototype = {
+    oferta: function(mensaje, comprador){ 
+        // acedemos al nombre, como es un objeto, usamos el .
+       console.log(`${comprador.nombre}: ${mensaje} `);
+    }
+}
+
+const Subasta = function(){
+    let compradores = {};
+
+    return {
+        registrar: function(usuario){
+            compradores[usuario.nombre] = usuario;
+            usuario.sala = this;
+            // para que el objeto sea global debemos mandarlo en el return
+            // console.log(compradores);
+        }
+    }
+}
+
+
+// Instanciar los objetos
+
+const Gabriel = new Comprador('Gabriel');
+const Pedrito = new Comprador('Pedrito');
+const Juana = new Comprador('Juana');
+
+// Nuevo vendedor
+
+const vendedor = new Vendedor('Vendedor');
+
+// Instanciar subasta
+
+const subasta = new Subasta();
+
+// El null si toma parametros
+
+subasta.registrar(Gabriel);
+
+// Crear oferta
+vendedor.oferta('Laptop', 3000);
+
+
+Gabriel.oferta(3500, Gabriel);
+
+Juana.oferta(2000, Juana);
+
+// Se vende el articulo
+vendedor.vendido(Gabriel.nombre);
+
+```
+
+
+## Namespace
+
+Es una forma de evitar colisiones de nombres en el scope global de Javascript, la idea del Namespace es crear un objeto global y agregar todas las funciones y métodos, en el mismo lugar, que crear multiples funciones y objetos que se puedan acceder de forma global.
+
+La idea es que le des un nombre unico a la aplicacion.
+
+Por ejemplo en Wordpress tienen el namespace como wp.
+
+La idea de usar el namespace es crear un objeto grande en tu aplicacion, en lugar de tener multiples funciones para distintas cosas.
+
+Ejemplo: Aplicacion para un menu de comidas
+
+```js
+const restauranApp = {};
+restauranApp.platillos = [
+    {
+        platillo: 'Pan',
+        precio: 20,
+    },
+    {
+        platillo: 'Lasaña',
+        precio: 25,
+    },
+    {
+        platillo: 'Hamburguesa',
+        precio: 30,
+    }
+]
+
+// functions
+
+restauranApp.funciones = {
+    ordenar: id => {
+        console.log(
+            `Tu platillo: ${restauranApp.platillos[id].platillo} se esta preparando.`
+            );
+    },
+    agregarPlatillo: (platillo, precio) => {
+        const nuevo = {
+            platillo,
+            precio
+        }
+        restauranApp.platillos.push(nuevo);
+    },
+    mostrarMenu: platillos => {
+        console.log(`Bienvenido al menu: `);
+        platillos.forEach( (platillo, index)  => {
+            console.log(`${index}: ${platillo.platillo} $ ${platillo.precio}`);
+        });
+    }
+}
+
+// console.log(restauranApp); 
+
+// aplicamos DEstructuring  
+const {platillos} = restauranApp;
+restauranApp.funciones.mostrarMenu(platillos);
+// Oredenamos
+restauranApp.funciones.ordenar(2);
+
+restauranApp.funciones.agregarPlatillo('Pastel', 15);
+restauranApp.funciones.mostrarMenu(platillos);
+
+
+// La idea del namspace es que no tengas globales, que no puedas a acceder a ellos y eviten las colisiones con otros tipos de objetos.
+
+// Si usamos librerias podrían chocar los nombres, y con NAMESPACE evita esto.
+```
+
+# Higher Order Functions and Array Methods in Javasccript

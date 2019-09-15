@@ -133,12 +133,19 @@ const autos = [
 // forEach
 // en el parametro del forEach es un callback
 // El forEach ira accediendo a cada uno del objeto
-autos.forEach((auto) =>{
-	console.log(auto);
-})
-
+// let resultado = [];
+// autos.forEach( auto => {
+// 	if(auto.color === 'Rojo'){
+// 		resultado.push(auto);
+// 	}
+// })
+// console.log(resultado);
 
 // map
+
+autos.map( auto => {
+	console.log(auto);
+});
 
 // filter
 

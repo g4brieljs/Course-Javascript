@@ -1108,3 +1108,24 @@ restauranApp.funciones.mostrarMenu(platillos);
 ```
 
 # Higher Order Functions and Array Methods in Javasccript
+
+## forEach
+
+Se usa para correr arreglos, por ejemplo algún carrito de compras que necesitas leer sus datos.
+
+```js
+array.forEach( value => {
+    console.log(value);
+});
+```
+
+## map
+
+Accede a los valores igual a forEach, la diferencia es que map retorna un arreglo nuevo.
+
+```js
+let resultado = array.map(auto => {
+    return auto;
+});
+console.log(auto);
+```

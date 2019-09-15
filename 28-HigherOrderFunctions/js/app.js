@@ -143,16 +143,30 @@ const autos = [
 
 // map
 
-autos.map( auto => {
-	console.log(auto);
-});
+// autos.map( auto => {
+// 	console.log(auto);
+// });
 
 // filter
 
+
+// let resultado = autos.filter(auto => {
+//     // aqui vamos a evaluar
+//     return auto.marca === 'BMW';
+// });
+// console.log(resultado);
+
 // find
+
+// let resultado = autos.find(auto => auto.modelo === 'Mustang');
+// console.log(resultado);
 
 // reduce
 
-// some
+// let resultado = autos.reduce((total, auto) => total + auto.precio, 0);
+const numeros = [1, 2, 3];
+let resultado = numeros.reduce((total, numero) => total + numero, 0);// el 0 es el valor de inicio
+console.log(resultado);
 
+// some
 

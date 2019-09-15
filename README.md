@@ -1124,8 +1124,44 @@ array.forEach( value => {
 Accede a los valores igual a forEach, la diferencia es que map retorna un arreglo nuevo.
 
 ```js
-let resultado = array.map(auto => {
-    return auto;
-});
+let resultado = array.map(auto => auto);
 console.log(auto);
+```
+
+## filter
+
+Crea un arreglo basado en una prueba evaluada, es muy utilizado:
+
+```js
+let result = array.filter(date => date.year >= 2015 && date.year <= 2017);
+console.log(result);
+```
+
+## find
+
+El find retorna el primer elmento que encuentre del areglo, filter filtra todos, find solo el primero.
+
+Ejemplo, para encontrar produtos, basados en codigos, porque el codigo es unico.
+
+```js
+let result = array.find(date => date.value === 'value');
+console.log(result);
+```
+ 
+## reduce
+
+Toma todos los valores y retorna un valor unico, por ejemplo para brindar resultado de una suma o operación:
+
+```js
+let result = array.reduce((total, date) => total + date.value, 0);
+console.log(result);
+```
+
+## some
+
+Evalúa cierta condicion, y retorna un booleano, false o true.
+
+```js
+let result = array.some(date => date.price > 120000);
+console.log(result);
 ```
